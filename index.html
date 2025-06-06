@@ -6,7 +6,6 @@
     <title>ROOFTOP BAR FFM</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@400;600&display=swap">
     <style>
-        
         body {
             font-family: "SF Pro Display", Arial, sans-serif;
             margin: 0;
@@ -15,6 +14,7 @@
             color: #fff;
             text-align: center;
         }
+
         .menu {
             display: flex;
             justify-content: center;
@@ -24,6 +24,7 @@
             top: 0;
             z-index: 1000;
         }
+
         .menu a {
             color: #fff;
             text-decoration: none;
@@ -31,9 +32,11 @@
             padding: 15px 20px;
             transition: 0.3s;
         }
+
         .menu a:hover {
             color: #ff6600;
         }
+
         .hero {
             position: relative;
             display: flex;
@@ -41,9 +44,9 @@
             justify-content: center;
             height: 90vh;
             background: url('tower.webp') no-repeat center center / cover;
-            text-align: center;
             flex-direction: column;
         }
+
         .hero::before {
             content: "";
             position: absolute;
@@ -53,19 +56,29 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.6);
         }
+
         .hero-content {
             position: relative;
             z-index: 1;
         }
+
         h1 {
             font-size: 50px;
             font-weight: 700;
             margin-bottom: 10px;
         }
-        p {
-            font-size: 24px;
-            margin-bottom: 20px;
+
+        h2 {
+            font-size: 36px;
+            margin: 40px 0 10px;
         }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
         .cta-button {
             background-color: #ff6600;
             color: white;
@@ -76,20 +89,51 @@
             cursor: pointer;
             transition: 0.3s;
         }
+
         .cta-button:hover {
             background-color: #cc5500;
+        }
+
+        .gallery {
+            padding: 40px 20px;
+            background-color: #111;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .section {
+            padding: 40px 20px;
         }
     </style>
 </head>
 <body>
-    
+
     <div class="menu">
-        <a href=index.html>Startseite</a>
+        <a href="index.html">Startseite</a>
         <a href="über.html">Über uns</a>
         <a href="menu.html">Menü</a>
         <a href="kontakt.html">Kontakt</a>
         <a href="buchung.html">Buchung</a>
     </div>
+
     <div class="hero">
         <div class="hero-content">
             <h1>ROOFTOP BAR FFM</h1>
@@ -97,25 +141,34 @@
             <button class="cta-button" onclick="window.location.href='buchung.html'">Jetzt reservieren</button>
         </div>
     </div>
-    <section class="about">
+
+    <section class="section about">
         <h2>Über uns</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor justo at eros fermentum, at gravida ligula facilisis.</p>
     </section>
-    
-    <section class="events">
-        <h2>Events & Specials?</h2>
-        <p>was SOLL HIER HIN1111</p>
+
+    <section class="section events">
+        <h2>Events & Specials</h2>
+        <p>Erlebe unsere legendären Sonnenuntergangs-Partys, DJ-Nächte und saisonalen Cocktail-Angebote.</p>
     </section>
-    
+
     <section class="gallery">
         <h2>Galerie</h2>
         <p>Einblicke in unsere Rooftop-Bar – genieße die Atmosphäre bereits vor deinem Besuch.</p>
+        <div class="gallery-grid">
+            <img src="roof.jpg" alt="Rooftop Aussicht">
+            <img src="bar.jpg" alt="Bar mit Cocktails">
+            <img src="top.jpg" alt="Blick über Frankfurt">
+            <img src="ambiente.jpg" alt="Ambiente am Abend">
+            <!-- Du kannst weitere Bilder hinzufügen -->
+        </div>
     </section>
-    
-    <section class="contact">
+
+    <section class="section contact">
         <h2>Kontakt</h2>
         <p>GHFDSFDSGDKLJGGHLKBJBGHDGJKGDFBHJLKBGHJFDKLFBHGJLKBHFGJKL</p>
     </section>
-    
+
 </body>
 </html>
+
