@@ -6,10 +6,10 @@
     <title>FAQ - ROOFTOP BAR FFM</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
+            background: linear-gradient(to right, #0f0f0f, #1a1a1a);
             color: #fff;
             text-align: center;
         }
@@ -18,11 +18,12 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 10px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(255, 102, 0, 0.2);
         }
 
         .menu a {
@@ -30,66 +31,84 @@
             text-decoration: none;
             font-size: 18px;
             padding: 15px 20px;
-            transition: color 0.3s;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
         }
 
         .menu a:hover {
-            color: #ff6600;
+            background-color: #ff6600;
+            color: #000;
         }
 
         .menu-section {
-            max-width: 800px;
-            margin: 50px auto;
+            max-width: 900px;
+            margin: 60px auto;
             padding: 0 20px;
         }
 
         h1 {
-            font-size: 50px;
+            font-size: 48px;
             font-weight: 700;
             margin-bottom: 20px;
+            color: #ff6600;
         }
 
-        p {
-            font-size: 20px;
+        .faq-item {
+            background-color: #1c1c1c;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 102, 0, 0.2);
+        }
+
+        .faq-item h3 {
+            color: #ff6600;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            font-size: 18px;
             line-height: 1.6;
-        }
-
-        .pdf-container {
-            margin-top: 30px;
-        }
-
-        .pdf-container embed {
-            width: 100%;
-            height: 600px;
-            border-radius: 8px;
+            color: #ccc;
         }
 
         .cta-button {
             background-color: #ff6600;
             color: white;
             font-size: 18px;
-            padding: 15px 25px;
+            padding: 15px 30px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.3s;
             text-decoration: none;
             display: inline-block;
-            margin-top: 20px;
-            min-height: 44px;
+            margin-top: 30px;
         }
 
         .cta-button:hover {
             background-color: #cc5500;
         }
 
-        /* Mobile Optimierung */
         @media (max-width: 600px) {
             h1 {
                 font-size: 32px;
             }
 
-            p {
+            .faq-item h3 {
+                font-size: 18px;
+            }
+
+            .faq-item p {
                 font-size: 16px;
             }
 
@@ -101,10 +120,6 @@
             .cta-button {
                 font-size: 16px;
                 padding: 12px 20px;
-            }
-
-            .pdf-container embed {
-                height: 400px;
             }
         }
     </style>
@@ -121,7 +136,36 @@
     </div>
 
     <div class="menu-section">
-        <h1>Oft gestellte Fragen</h1>
-        <p>idkkkk</p>
+        <h1>FAQ – Häufig gestellte Fragen</h1>
+
+        <div class="faq-item">
+            <h3>🎉 Muss ich reservieren oder kann ich spontan vorbeikommen?</h3>
+            <p>Wir empfehlen dir, vorab zu reservieren, besonders am Wochenende. Spontane Besuche sind möglich, aber nicht garantiert – unsere Rooftop-Plätze sind heiß begehrt!</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>🕒 Wann habt ihr geöffnet?</h3>
+            <p>Unsere Bar ist täglich von 17:00 bis 01:00 Uhr geöffnet. An besonderen Event-Tagen können die Öffnungszeiten abweichen – checke am besten Instagram oder unsere Website.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>🍸 Gibt es auch alkoholfreie Cocktails?</h3>
+            <p>Natürlich! Unsere Barkeeper zaubern kreative Mocktails mit saisonalen Zutaten – Genuss ganz ohne Alkohol.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>🚗 Gibt es Parkmöglichkeiten in der Nähe?</h3>
+            <p>Ja, im Parkhaus "Skyline Plaza" findest du ausreichend Parkplätze – nur 3 Minuten Fußweg entfernt.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>👗 Gibt es einen Dresscode?</h3>
+            <p>Smart Casual ist perfekt! Bitte keine Sportkleidung – schließlich bist du auf Frankfurts stilvollster Dachterrasse 🌇</p>
+        </div>
+
+        <a class="cta-button" href="kontakt.html">Noch Fragen? Schreib uns!</a>
+    </div>
+
 </body>
 </html>
+
