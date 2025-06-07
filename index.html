@@ -6,6 +6,7 @@
   <title>ROOFTOP BAR FFM</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    
     * {
       margin: 0;
       padding: 0;
@@ -60,6 +61,11 @@
     .menu a:hover::after {
       width: 100%;
     }
+
+    body.popup-open {
+      overflow: hidden;
+    }
+
 
     .hero {
       height: 100vh;
@@ -173,6 +179,11 @@
       transform: scale(1.05);
       box-shadow: 0 10px 25px rgba(255,102,0,0.5);
     }
+
+    .map-info-section {
+      margin-top: 40px;
+    }
+
     .map-info-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -180,14 +191,18 @@
       gap: 30px;
       margin-top: 10px;
     }
+
     .map-container, .info-container {
       flex: 1 1 400px;
       border-radius: 10px;
       overflow: hidden;
     }
+
     .map-container iframe {
-      border-radius: 10px;
-      height: 360px;
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      border: none;
     }
 
     .info-container {
@@ -203,6 +218,7 @@
       margin-bottom: 30px;
       color: #ff6600;
     }
+
     .info-container h3 {
       color: #ff6600;
       margin-bottom: 10px;
@@ -215,12 +231,46 @@
       .menu a {
         margin: 10px;
       }
+      .map-info-wrapper {
+        flex-direction: column;
+      }
+    }
+        
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+    .popup-map {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      height: 70vh;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 102, 0, 0.6);
+    }
+    .popup-map .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 10;
     }
   </style>
 </head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-
 <body>
   <div class="menu">
     <a href="index.html">Startseite</a>
@@ -266,33 +316,75 @@ Erfahrungen mit Firmenveranstaltungen, Produktpräsentationen, VIP-Events
   </a>
 </div>
 
-    
-  </section>
+<body>
   <section class="map-info-section">
-  <h2>So findest du uns</h2>
-  <div class="map-info-wrapper">
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen loading="lazy"></iframe>
+    <h2>So findest du uns</h2>
+    <div class="map-info-wrapper">
+      <div class="map-container">
+        <iframe id="mapFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639.6495322182406!2d8.671547269696589!3d50.11252859822062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0eac7a0ded85%3A0x7c2baf635958b4fe!2sNeue%20Mainzer%20Str.%2052%2F58%2C%2060311%20Frankfurt%20am%20Main!5e0!3m2!1sde!2sde!4v1749331081116!5m2!1sde!2sde" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="info-container">
+        <h3>Unsere Adresse</h3>
+        <p>Neue Mainzer Str. 52–58<br>60311 Frankfurt am Main</p>
+
+        <h3>Öffnungszeiten</h3>
+        <p><strong>Bar:</strong> So.–Do. 16:00–00:00<br><strong>Fr. & Sa.:</strong> 16:00–02:00<br>
+           <strong>Lounge:</strong> So.–Do. 20:00–00:00<br><strong>Fr. & Sa.:</strong> 20:00–02:00</p>
+
+        <h3>Anfahrt</h3>
+        <p>
+          <a href="#" onclick="openTransitRoute()">U-Bahn & S-Bahn (Hauptwache, Willy-Brandt-Platz)</a><br>
+          <a href="#" onclick="focusParking()" style="color:#0400ff;text-decoration:underline;display:inline-block;margin-top:10px;">Parkmöglichkeiten im Parkhaus Alte Oper.</a>
+        </p>
+
+        <h3>Kontakt</h3>
+        <p>Telefon: <a href="tel:+4969213456789" style="color:#ff6600;">069 213456789</a><br>
+           E-Mail: <a href="mailto:info@rooftopbarffm.de" style="color:#ff6600;">info@rooftopbarffm.de</a></p>
+      </div>
     </div>
-    <div class="info-container">
-      <h3>Unsere Adresse</h3>
-      <p>Neue Mainzer Str. 52–58<br>60311 Frankfurt am Main</p>
+  </section>
 
-      <h3>Öffnungszeiten</h3>
-      <p><strong>Bar:</strong> So.–Do. 16:00–00:00<br><strong>Fr. & Sa.:</strong> 16:00–02:00<br>
-         <strong>Lounge:</strong> So.–Do. 20:00–00:00<br><strong>Fr. & Sa.:</strong> 20:00–02:00</p>
-
-      <h3>Anfahrt</h3>
-      <p>U-Bahn & S-Bahn (Hauptwache, Willy-Brandt-Platz)<br>Parkmöglichkeiten im Parkhaus Alte Oper.</p>
-
-      <h3>Kontakt</h3>
-      <p>Telefon: <a href="tel:+4969213456789" style="color:#ff6600;">069 213456789</a><br>
-         E-Mail: <a href="mailto:info@rooftopbarffm.de" style="color:#ff6600;">info@rooftopbarffm.de</a></p>
+  <!-- Popup Fenster für Parkhaus -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-map">
+      <button class="close-btn" onclick="closePopup()">&times;</button>
+      <iframe id="popupMap" src="" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
-</section>
 
+  <script>
+    function openTransitRoute() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          const destination = encodeURIComponent("Neue Mainzer Str. 52, Frankfurt am Main");
+          const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lon}&destination=${destination}&travelmode=transit`;
+          window.open(mapsUrl, '_blank');
+        }, function() {
+          alert("Standortermittlung fehlgeschlagen. Bitte Standortdienste aktivieren.");
+        });
+      } else {
+        alert("Geolocation wird von deinem Browser nicht unterstützt.");
+      }
+    }
 
+    function focusParking() {
+      const popup = document.getElementById('popupOverlay');
+      const map = document.getElementById('popupMap');
+      document.body.classList.add('popup-open');
+      map.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5116.757559933441!2d8.667948793289597!3d50.11663369812372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0ead9c94c0af%3A0xc2282ae8c398a5ad!2sParkhaus%20Alte%20Oper!5e0!3m2!1sde!2sde!4v1749332988100!5m2!1sde!2sde"
+      popup.style.display = 'flex';
+    }
 
+    function closePopup() {
+      const popup = document.getElementById('popupOverlay');
+      const map = document.getElementById('popupMap');
+      map.src = "";
+      popup.style.display = 'none';
+      document.body.classList.remove('popup-open');
+    }
+  </script>
 </body>
 </html>
+
