@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buchung bestätigt – ROOFTOP BAR FFM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: rgba(17, 17, 37, 1);
+      padding: 15px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(17, 17, 37, 1), 0 0 12px rgba(17, 17, 37, 1);
+    }
+
+    .menu a {
+      position: relative;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 15px 20px;
+      margin: 0 10px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      width: 0%;
+      height: 2px;
+      background-color: #ff6600;
+      transition: width 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #ffcc99;
+      text-shadow: 0 0 12px #ff6600, 0 0 24px #ff6600;
+    }
+
+    .menu a:hover::after {
+      width: 100%;
+      box-shadow: 0 0 6px #ff6600, 0 0 12px #ff6600;
+    }
+
+    .confirmation-container {
+      max-width: 600px;
+      margin: 80px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #ff6600;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      background-color: #ff6600;
+      color: white;
+      font-size: 18px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 30px;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 4px 10px rgba(255, 102, 0, 0.4);
+      animation: pulse-glow 2s infinite, shoosh 3s infinite;
+    }
+
+    .cta-button:hover {
+      background-color: #cc5500;
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(255, 102, 0, 0.5);
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600;
+      }
+      50% {
+        box-shadow: 0 0 20px #ff6600, 0 0 40px #ff6600;
+      }
+    }
+
+    @keyframes shoosh {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(3px); }
+      100% { transform: translateX(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+      p {
+        font-size: 16px;
+      }
+      .cta-button {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <a href="index.html">Startseite</a>
+    <a href="über.html">Über uns</a>
+    <a href="menu.html">Menü</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="buchung.html">Buchung</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+
+  <div class="confirmation-container">
+    <h1>Vielen Dank für deine Buchung!</h1>
+    <p>Wir haben deine Reservierung erfolgreich erhalten. Du bekommst in Kürze eine Bestätigung per E-Mail mit allen Details.</p>
+    <p>Falls du Fragen hast oder deine Buchung ändern möchtest, kannst du uns jederzeit über die <a href="kontakt.html" style="color: #ff6600; text-decoration: underline;">Kontaktseite</a> erreichen.</p>
+    <a href="index.html" class="cta-button">Zurück zur Startseite</a>
+  </div>
+</body>
+</html>
