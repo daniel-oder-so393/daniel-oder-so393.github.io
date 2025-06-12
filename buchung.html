@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ROOFTOP BAR FFM - Reservierung</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #000;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    .menu {
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .menu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -30,9 +33,9 @@
     position: relative;
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
-    padding: 15px 20px;
-    margin: 0 10px;
+    font-size: 1.125rem;
+    padding: 1rem 1.25rem;
+    margin: 0 0.625rem;
     transition: color 0.3s ease, text-shadow 0.3s ease;
   }
 
@@ -56,200 +59,258 @@
     width: 100%;
     box-shadow: 0 0 6px #ff6600, 0 0 12px #ff6600;
   }
+  #bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: rgba(0, 0, 0, 0.7); /* transparenter Hintergrund */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #fbbd08; /* Beispiel: goldfarbenes Hover */
+}
+.booking-section {
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.booking-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input, textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+button {
+  padding: 15px;
+  background-color: #fbbd08;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0a800;
+}
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .booking-section {
+    padding: 50px 10px;
+  }
+
+  input, textarea {
+    font-size: 1em;
+  }
+}
 
 
 
-        
+  .content {
+    width: 90%;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px 60px;
+    text-align: center;
+  }
 
-      .menu-section {
-          max-width: 800px;
-          margin: 50px auto;
-          padding: 0 20px;
-          text-align: center;
-        }
+  h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: slideDown 1s ease-out forwards;
+    opacity: 0;
+  }
 
+  p {
+    font-size: clamp(16px, 2vw, 22px);
+    margin-bottom: 40px;
+    animation: fadeIn 1.2s ease-out forwards;
+    opacity: 0;
+  }
 
-
-
-
-
- 
-
-    
-
-    
-    @keyframes slideDown {
-      from { transform: translateY(-100%); }
-      to { transform: translateY(0); }
-    }
-
-
-
-
-   
-
-    .content {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 56px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 22px;
-      margin-bottom: 30px;
-    }
-
-    .form-container {
-      background-color: rgba(30, 30, 30, 0.95);
-      padding: 40px;
-      border-radius: 16px;
-      text-align: left;
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
-    }
-
-    label {
-      font-size: 20px;
-      font-weight: 600;
-      display: block;
-      margin-top: 20px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="datetime-local"],
-    input[type="number"] {
-      width: 100%;
-      padding: 18px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      background-color: #222;
-      color: white;
-      margin-top: 8px;
-      font-family: inherit;
-    }
-
-    #wünsche {
-      height: 200px;
-    }
-
-    .checkbox-container {
-      display: flex;
-      align-items: center;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-      position: relative;
-    }
-
-    .checkbox-container input[type="checkbox"] {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-    }
-
-    .checkmark {
-      width: 24px;
-      height: 24px;
-      background-color: #222;
-      border-radius: 4px;
-      border: 2px solid #ff6600;
-      display: inline-block;
-      margin-right: 12px;
-      position: relative;
-      transition: background 0.3s, border-color 0.3s;
-    }
-
-    .checkbox-container input:checked + .checkmark {
-      background-color: #ff6600;
-      border-color: #ff6600;
-    }
-
-    .checkbox-container input:checked + .checkmark::after {
-      content: "\2714";
-      position: absolute;
-      color: white;
-      font-size: 18px;
-      top: 2px;
-      left: 5px;
-      opacity: 0;
-      transform: scale(0.5);
-      animation: fadeInCheck 0.3s forwards;
-    }
-
-    @keyframes fadeInCheck {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .cta-button {
-      background-color: #ff6600;
-      color: white;
-      font-size: 20px;
-      padding: 18px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-      width: 100%;
-      margin-top: 25px;
-    }
-      textarea#wünsche {
+  .form-container {
+    background-color: rgba(30, 30, 30, 0.95);
+    padding: 5vw;
+    border-radius: 16px;
+    text-align: left;
     width: 100%;
-    height: 200px;
-    padding: 18px;
-    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0;
+  }
+  #particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+
+
+  label {
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: block;
+    margin-top: 1.5rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.125rem;
     border: none;
     border-radius: 10px;
     background-color: #222;
     color: white;
-    margin-top: 8px;
+    margin-top: 0.625rem;
     font-family: inherit;
-    resize: vertical; /* optional: erlaubt Größenänderung durch Nutzer */
-  }
-    textarea#wünsche:focus {
-    outline: none;
-    box-shadow: 0 0 15px rgba(255, 102, 0, 0.6), 0 0 30px rgba(255, 102, 0, 0.3);
-    transform: scale(1.02);
-  }
-
-  /* Gleiche Effekte auf alle Input-Felder anwenden */
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="datetime-local"],
-  input[type="number"] {
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
     box-shadow: 0 0 10px rgba(255, 102, 0, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  input[type="tel"]:focus,
-  input[type="datetime-local"]:focus,
-  input[type="number"]:focus {
+  input:focus,
+  textarea:focus {
     outline: none;
     box-shadow: 0 0 15px rgba(255, 102, 0, 0.6), 0 0 30px rgba(255, 102, 0, 0.3);
     transform: scale(1.02);
   }
 
-    .cta-button:hover {
-      background-color: #cc5500;
+  textarea#wünsche {
+    min-height: 150px;
+    height: auto;
+    resize: vertical;
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    position: relative;
+  }
+
+  .checkbox-container input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .checkmark {
+    width: 24px;
+    height: 24px;
+    background-color: #222;
+    border-radius: 4px;
+    border: 2px solid #ff6600;
+    display: inline-block;
+    margin-right: 12px;
+    position: relative;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .checkbox-container input:checked + .checkmark {
+    background-color: #ff6600;
+    border-color: #ff6600;
+  }
+
+  .checkbox-container input:checked + .checkmark::after {
+    content: "\2714";
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    top: 2px;
+    left: 5px;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInCheck 0.3s forwards;
+  }
+  .cta-button {
+  background-color: #ff6600;
+  color: white;
+  font-size: 1.25rem;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  width: 100%;
+  margin-top: 2rem;
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.4);
+}
+
+.cta-button:hover {
+  background-color: #cc5500;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.8), 0 0 30px rgba(255, 102, 0, 0.6);
+  transform: scale(1.05);
+}
+
+.cta-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+}
+
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes fadeInCheck {
+    to {
+      opacity: 1;
+      transform: scale(1);
     }
-  </style>
+  }
+</style>
+
+  
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const phoneInput = document.getElementById("phone");
@@ -264,6 +325,8 @@
   </script>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <div class="menu">
     <a href="index.html">Startseite</a>
     <a href="über.html">Über uns</a>
@@ -278,7 +341,7 @@
     <p>Reserviere jetzt deinen Platz für ein unvergessliches Erlebnis!</p>
 
     <div class="form-container">
-      <form action="reservierung_verarbeiten.php" method="POST">
+      <form action="confirm.html" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -303,9 +366,67 @@
           Ich akzeptiere die Reservierungsbedingungen und die Datenschutzerklärung.
         </label>
 
-        <button class="cta-button" type="submit">Buchen</button>
+        <button class="cta-button" onclick="window.location.href='confirm.html'">Buchen</button>
+
       </form>
     </div>
   </div>
+  <script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": { "value": "#ffffff" },
+      "shape": {
+        "type": "circle",
+        "stroke": { "width": 0, "color": "#000000" }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false
+      },
+      "size": {
+        "value": 3,
+        "random": true
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out"
+      }
+    },
+    "interactivity": {
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "repulse"
+        }
+      },
+      "modes": {
+        "repulse": {
+          "distance": 100,
+          "duration": 0.4
+        }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+
 </body>
 </html>
