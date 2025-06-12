@@ -30,6 +30,10 @@
       
       
     }
+    textarea, input {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 
       .menu {
     display: flex;
@@ -126,25 +130,8 @@
         background-color: #ff6600;
         color: black;
     }
-    .wavebar-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px; /* oder passend zur Menühöhe */
-  overflow: hidden;
-  z-index: 1001;
-  pointer-events: none;
-}
+    
 
-.wavebar {
-  width: 200%;
-  height: 100%;
-  background: url('wavebar_stretched.png') repeat-x;
-  background-size: contain;
-  animation: waveFlow 20s linear infinite;
-  opacity: 0.9;
-}
 
 @keyframes waveFlow {
   0% {
@@ -370,7 +357,7 @@
         <input type="checkbox" id="datenschutz" required>
         <label for="datenschutz">Ich stimme zu, dass meine Daten zu Kontaktzwecken genutzt werden dürfen. Ich habe die <a href="#" style="color: #ff6600; text-decoration: underline;">Datenschutzbestimmungen</a> gelesen und bin mit diesen einverstanden.*</label>
       </div>
-      <button class="cta-button" onclick="window.location.href='erfolg.html'">Nachricht senden</button>
+      <button class="cta-button" onclick="window.location.href='kontaktbestatigt.html'">Nachricht senden</button>
     </form>
   </div>
 
